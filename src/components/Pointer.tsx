@@ -1,4 +1,3 @@
-import { color } from 'framer-motion';
 import React from 'react'
 import { FaArrowPointer } from "react-icons/fa6"; 
 import { twMerge } from 'tailwind-merge';

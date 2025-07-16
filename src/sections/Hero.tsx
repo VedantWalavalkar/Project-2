@@ -15,6 +15,66 @@ export default function Hero() {
     const [rightDesignScope, rightDesignAnimate] = useAnimate();
     const [rightPointerScope, rightPointerAnimate] = useAnimate();
 
+    // useEffect(() => {
+    //     leftDesignAnimate([
+    //         [leftDesignScope.current, { opacity: 1 }, { duration: 0.5 }],
+    //         [leftDesignScope.current, { x: 0, y: 0 }, { duration: 0.5 }],
+    //     ]);
+
+    //     leftPointerAnimate([
+    //         [leftPointerScope.current, { opacity: 1 }, { duration: 0.5 }],
+    //         [leftPointerScope.current, { x: -100, y: 0 }, { duration: 0.5 }],
+    //         [
+    //             leftPointerScope.current,
+    //             { x: 0, y: [0, 20, 0] },
+    //             { duration: 0.5 },
+    //         ],
+    //         [leftPointerScope.current, { scale: 1.1 }, { duration: 0.5 }],
+    //         [leftPointerScope.current, { scale: 1 }, { duration: 0.5 }],
+    //     ]);
+
+    //     rightDesignAnimate([
+    //         [
+    //             rightDesignScope.current,
+    //             { opacity: 1 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //         [
+    //             rightDesignScope.current,
+    //             { x: 0, y: 0 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //     ]);
+
+    //     rightPointerAnimate([
+    //         [
+    //             rightPointerScope.current,
+    //             { opacity: 1 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //         [
+    //             rightPointerScope.current,
+    //             { x: 100, y: 0 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //         [
+    //             rightPointerScope.current,
+    //             { x: 0, y: [0, 20, 0] },
+    //             { duration: 0.5, delay: 0.2 },
+    //         ],
+    //         [
+    //             rightPointerScope.current,
+    //             { scale: 1.1 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //         [
+    //             rightPointerScope.current,
+    //             { scale: 1 },
+    //             { duration: 0.5, delay: 0.8 },
+    //         ],
+    //     ]);
+    // }, []);
+
     useEffect(() => {
         leftDesignAnimate([
             [leftDesignScope.current, { opacity: 1 }, { duration: 0.5 }],
@@ -73,7 +133,17 @@ export default function Hero() {
                 { duration: 0.5, delay: 0.8 },
             ],
         ]);
-    }, []);
+    }, [
+        leftDesignScope,
+        leftDesignAnimate,
+        leftPointerScope,
+        leftPointerAnimate,
+        rightDesignScope,
+        rightDesignAnimate,
+        rightPointerScope,
+        rightPointerAnimate,
+    ]);
+
     return (
         <section
             className="my-28 lg:my-30 overflow-x-clip flex-1"
@@ -120,7 +190,7 @@ export default function Hero() {
                 </div>
                 <div className="mt-6 flex justify-center text-center text-xl text-white/50 max-w-2xl lg:max-w-4xl mx-auto">
                     <p>
-                        Design tools shouldn't slow you down. Layers combines
+                        Design tools shouldn&apos;t slow you down. Layers combines
                         powerful features with an intuitive interface that keeps
                         you in your creative flow.
                     </p>

@@ -13,7 +13,7 @@ export default function CallToAction() {
             { x: "-50%" },
             { duration: 20, repeat: Infinity, ease: "linear" }
         );
-    }, []);
+    }, [animate, scope]);
 
     useEffect(() => {
         if (animation.current) {
@@ -34,7 +34,7 @@ export default function CallToAction() {
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     {Array.from({ length: 10 }).map((_, index) => (
-                        <div className="flex items-center gap-16 ">
+                        <div key={index} className="flex items-center gap-16 ">
                             <span className="text-lime-400 md:text-7xl">
                                 &#10038;
                             </span>
